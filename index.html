@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="index.css">
+    <title>Beaches</title>
+</head>
+<body>
+    
+    <div>
+        <nav>
+            <img class="logo_1" src="images/logo_1.png" alt="">
+            <img class="logo_2" src="images/logo_2.png" alt="">
+        </nav>
+
+        <nav>
+            <ul id="menulist" class="navbar">
+                <li class="nav"><a href="">HOME</a></li>
+                <li class="nav"><a href="">TOURS</a></li>
+                <li class="nav"><a href="">EXPLORE</a></li>
+                <li class="nav"><a href="">ABOUT US</a></li>
+                <li class="nav"><a href="">CONTACT</a></li>
+
+                <img  class="search"  src="images/search.png" alt="">
+                <img class="fb" src="images/fb.pnG" alt="">
+                <img class="insta" src="images/insta.png" alt="">
+                <img class="twitter" src="images/twitter.png" alt="">
+                <img class="linkedin" src="images/linkedin.png" alt="">
+            </ul>
+        </nav>
+
+        <div class="content">
+            <h1 class="sh1">Travel website</h1>
+            <h1 class="sh21">NEVER STOP</h1>
+            <h1 class="sh22">EXPLORING THE</h1>
+            <h1 class="sh23">WORLD</h1>
+            <p class="sh3">Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Voluptatum voluptate amet ut rerum distinctio <br> non eos quibusdam totam explicabo. </p>
+            <button class="learnmore">LEARN MORE</button>
+        </div>
+
+        <section class="slider">
+          <div #swiperRef="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img class="beach" src="images/beach.jpg" alt=""><h1 class="beach_name">BEACH</h1></div>
+              <div class="swiper-slide"><img class="nature" src="images/nature.jpg" alt=""><h1 class="nature_name">NATURE</h1></div>
+              <div class="swiper-slide"><img class="hotels" src="images/hotels.jpg" alt=""><h1 class="hotel_name">HOTELS</h1></div>
+              <div class="swiper-slide"><img class="falls" src="images/falls.jpg" alt=""><h1 class="falls_name">FALLS</h1></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      var appendNumber = 4;
+      var prependNumber = 1;
+      document
+        .querySelector(".prepend-2-slides")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.prependSlide([
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+          ]);
+        });
+      document
+        .querySelector(".prepend-slide")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.prependSlide(
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+          );
+        });
+      document
+        .querySelector(".append-slide")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.appendSlide(
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+          );
+        });
+      document
+        .querySelector(".append-2-slides")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.appendSlide([
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+          ]);
+        });
+    </script>
+
+
+</body>
+</html>
